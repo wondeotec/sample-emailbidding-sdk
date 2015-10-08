@@ -1,8 +1,7 @@
 #!/usr/bin/env php
-
 <?php
 
-require_once('bootstrap.php');
+require_once __DIR__.'/bootstrap.php';
 
 use EB\SDK\RecipientSubscribe\RecipientSubscribe;
 use EB\SDK\RecipientSubscribe\RecipientFactory;
@@ -22,6 +21,8 @@ try {
     );
 } catch (\Exception $recipientSubscribeException) {
     echo 'An excepetion occurred: ' . $recipientSubscribeException->getMessage() . PHP_EOL;
+
+    return;
 }
 
 if ($wasRecipientSubmittedWithSuccess) {
