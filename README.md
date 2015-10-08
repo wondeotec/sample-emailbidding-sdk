@@ -8,8 +8,31 @@ to you [composer](https://getcomposer.org/) dependencies.
 ## Installation
 You can run './install' script that will download composer and install the dependencies or you can do it by your own.
 
-## Running
-You can edit PHP script runTest.php and run it with:
+## Testing Recipient
+If you want to build an Emailbidding recipient and testing if your data is valid, you can edit 
+'test-anonymous-recipient-subscribe.php' and run it with:
 ```bash
-$ php runTest.php
+$ php test-recipient-subscribe.php
+```
+
+There exists a similar version for testing anonymous integration:
+```bash
+$ php test-anonymous-recipient-subscribe.php
+```
+
+If you want to submit recipients to Emailbidding platform , your can edit 'simple-recipient-subscribe-test.php' and 
+run the script with:
+```bash
+$ php simple-recipient-subscribe-test.php
+```
+
+In similar way to anonymous integration:
+```bash
+$ php simple-anonymous-recipient-subscribe-test.php
+```
+
+## Testing Webhook
+To test if your server will fit with Emailbidding webhooks, you can edit script 'test-webhook.php' and running it with:
+```bash
+$ php test-webhook.php
 ```
