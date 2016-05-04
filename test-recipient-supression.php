@@ -3,15 +3,15 @@
 
 require_once __DIR__.'/bootstrap.php';
 
-use EB\SDK\SuppressionImport\SuppressedRecipient;
+use EB\SDK\RecipientSuppress\Recipient;
 
 try {
     // Creating a new Suppressed Recipient
-    $suppressedRecipient = new SuppressedRecipient();
-    $suppressedRecipient->setValue('freddie@domain.com');
+    $recipient = new Recipient();
+    $recipient->setValue('freddie@domain.com');
 
     // Test if my recipient has valid data
-    $suppressedRecipient->hasValidData();
+    $recipient->hasValidData();
 } catch (\Exception $suppressedRecipientException) {
     // If not, then an exception will occur
     echo 'An exception occurred: ' . $suppressedRecipientException->getMessage() . PHP_EOL;

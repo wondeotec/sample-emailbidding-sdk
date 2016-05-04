@@ -3,24 +3,21 @@
 
 require_once __DIR__.'/bootstrap.php';
 
-use EB\SDK\SuppressionImport\SuppressedRecipientSuppression;
-use EB\SDK\SuppressionImport\SuppressedRecipientFactory;
-use \EB\SDK\SuppressionImport\Suppression;
+use EB\SDK\RecipientSuppress\RecipientSuppress;
+use EB\SDK\RecipientSuppress\RecipientFactory;
+use EB\SDK\RecipientSuppress\Suppression;
 
 
 // ** SUPPRESSED RECIPIENT SUPPRESSION ** //
 // Creating a suppression recipient object with my credentials
-$suppressedRecipientSuppression = new SuppressedRecipientSuppression('YOUR_PUBLISHER_API_KEY', 'YOUR_PUBLISHER_API_SECRET');
+$recipientSuppress = new RecipientSuppress('YOUR_PUBLISHER_API_KEY', 'YOUR_PUBLISHER_API_SECRET');
 
 // Posting a suppressed recipient to Emailbidding API and dumping the result
-
 $wasRecipientSuppressedWithSuccess = false;
 try {
-    $wasRecipientSubmittedWithSuccess = $suppressedRecipientSuppression->post(
-        array(SuppressedRecipientFactory::createSimpleSuppressedRecipient('email@domain.com'),
-            SuppressedRecipientFactory::createSimpleSuppressedRecipient('email2@domain.com')),
+    $wasRecipientSuppressedWithSuccess = $recipientSuppress->post(
+        array(RecipientFactory::createSimpleSuppressedRecipient('email@domain.com')),
         851,
-        'my_best_database',
         Suppression::EMAIL_SUPPRESSION_TYPE
     );
 } catch (\Exception $recipientSuppressionException) {
