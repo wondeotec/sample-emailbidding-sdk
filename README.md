@@ -31,6 +31,16 @@ In similar way to anonymous integration:
 $ php simple-anonymous-recipient-subscribe-test.php
 ```
 
+To test a to be suppressed recipient you can run:
+```bash
+$ php test-recipient-suppression.php
+```
+
+And to test the import of the suppression use:
+```bash
+$ php simple-recipient-suppression-test.php
+```
+
 ## Testing Webhook
 To test if your server will fit with Emailbidding webhooks, you can edit script 'test-webhook.php' and running it with:
 ```bash
